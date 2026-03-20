@@ -40,6 +40,7 @@ public class MenuApp {
                    break;
                case 2:
                    System.out.println("Iniciar Sesion");
+                   courseMenu();
                    break;
                case 3:
                    System.out.println("Salir del sistema ");
@@ -49,6 +50,30 @@ public class MenuApp {
            }
        }
 
+   }
+
+
+   public void courseMenu(){
+
+       System.out.println("Menu Curso");
+       boolean init = true;
+       sc.nextLine();
+
+       while(init){
+           System.out.println("1. Crear Curso 2. Actualizar curso 3. ver Cursos 4. Ver curso por Id 5. Eliminar Curso 6. Volver");
+
+           int opt = sc.nextInt();
+           sc.nextLine();
+           switch (opt){
+               case 1:
+                   System.out.println("Crear Curso");
+                   break;
+               case 6:
+                   init = false;
+               default:
+                   System.out.println("Seleccione opción valida");
+           }
+       }
    }
 
 

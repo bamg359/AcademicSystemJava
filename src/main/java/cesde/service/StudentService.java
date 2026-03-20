@@ -1,6 +1,7 @@
 package cesde.service;
 
 import cesde.domain.Student;
+import cesde.repository.StudentRepository;
 
 import java.util.Scanner;
 
@@ -12,9 +13,12 @@ public class StudentService {
     // Voy a crear una instancia unica de Student
 
     private final Student student;
+    private final StudentRepository studentRepository;
 
-    public StudentService(Student student){
-        this.student = student; // Esto es una inyeccion de dependencias
+    public StudentService(Student student, StudentRepository studentRepository){
+
+        this.student = student;
+        this.studentRepository= studentRepository;// Esto es una inyeccion de dependencias
     }
 
 
@@ -34,7 +38,7 @@ public class StudentService {
         student.setLastName(lastName);
 
 
-        return student;
+        return studentRepository.createStudentRepository(student);
 
     }
 
